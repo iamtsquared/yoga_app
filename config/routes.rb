@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
   root to: "home#index"
 
+  resources :sequences do
+    resources :comments
+    resources :poses
+  end
+  resources :poses do
+    resources :photos
+  end
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
