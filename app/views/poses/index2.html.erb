@@ -1,5 +1,5 @@
 <h1> POSES </h1>
-	<% @poses.each do |p| %>
+	<% @poses.first(5).each do |p| %>
 		<h2><%= link_to p.name, pose_path(p) %></h2><br/>
 				<%= image_tag asset_path "#{p.image}", size: "100x100" %><br/>
 

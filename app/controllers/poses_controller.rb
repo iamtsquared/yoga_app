@@ -12,9 +12,9 @@ class PosesController < ApplicationController
 
 	
 	
-	def new
-		@poses = Pose.all
+	def new		
 		@sequence = Sequence.find(params[:sequence_id])
+		@poses = Pose.all
 		@pose = Pose.new
 	end
 
@@ -23,7 +23,7 @@ class PosesController < ApplicationController
 		@pose = Pose.new(pose_params)
 
 		@pose.user = current_user
-		@pose.sequence = @sequence
+		#@pose.sequence = @sequence
 		if @pose.save
 			redirect_to sequence_pose_path(@sequence, @pose)
 		else
@@ -33,8 +33,12 @@ class PosesController < ApplicationController
 	end
 
 	def show
-		@sequence = Sequence.find(params[:sequence_id])
-		@pose = Pose.find(params[:id])
+		if (Sequence.find(params[:sequence_id])) == ""
+			@pose = Pose.find(params[:id])
+		else			
+			@sequence = Sequence.find(params[:sequence_id])
+			@pose = Pose.find(params[:id])
+		end
 	end
 
 	private

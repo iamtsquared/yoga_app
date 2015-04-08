@@ -2,7 +2,7 @@
 
 	<div class="col-md-5">
 		<%= simple_form_for [@sequence, @pose] do |form| %>
-			<%= form.input :name, :collection => @poses.each %>
+			<%= form.input :name, :collection => @poses.first(5) %>
 			<%= form.submit 'Add pose' %>
 		<% end %>
 
