@@ -1,8 +1,9 @@
+ <h3>Build sequence: <strong><%= @sequence.name.upcase %></strong></h3>
 <div class="row">
 
 	<div class="col-md-5">
 		<%= simple_form_for [@sequence, @pose] do |form| %>
-			<%= form.input :name, :collection => @poses.first(5) %>
+			<%= form.input :name, :label => "Pose", :collection => @poses.first(5) %>
 			<%= form.submit 'Add pose' %>
 		<% end %>
 

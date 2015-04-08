@@ -1,5 +1,5 @@
 class SequencesController < ApplicationController
-	before_action :authenticate_user!
+	#before_action :authenticate_user!
 
 	def index
 		@sequences = current_user.sequences
@@ -21,7 +21,7 @@ class SequencesController < ApplicationController
 		
 		@sequence = current_user.sequences.build(sequence_params)
 		if @sequence.save
-			redirect_to sequence_path(@sequence)
+			redirect_to sequences_path(@sequence)
 		else
 			render :new
 		end

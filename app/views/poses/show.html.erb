@@ -1,6 +1,6 @@
 
 
-<h1><%= "#{@pose.name}" %></h1>
+<h1><%= @pose.name %></h1>
 <%= image_tag asset_path "#{@pose.image}", size: "300x300" %><br/><br/>
 <%= @pose.description %>
-<%= button_to "Add To My Sequence" %>
+<%= button_to "Add To My Sequence", sequence_poses_path(@sequence) %>

@@ -1,5 +1,5 @@
 class PosesController < ApplicationController
-	before_action :authenticate_user!
+	#before_action :authenticate_user!
 
 	def index2
 		@poses = Pose.all
@@ -33,12 +33,11 @@ class PosesController < ApplicationController
 	end
 
 	def show
-		if (Sequence.find(params[:sequence_id])) == ""
-			@pose = Pose.find(params[:id])
-		else			
-			@sequence = Sequence.find(params[:sequence_id])
-			@pose = Pose.find(params[:id])
-		end
+				
+		@sequence = Sequence.find(params[:sequence_id])
+		@pose = Pose.find(params[:id])
+		@poses = @sequence.poses
+	
 	end
 
 	private
