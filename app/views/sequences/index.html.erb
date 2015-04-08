@@ -1,0 +1,11 @@
+<h1> SEQUENCES </h1>
+
+<% @sequences.each do |seq| %>
+	<%= link_to seq.name, sequence_path(seq) %><br/>
+	level:  <%= seq.level %><br/>
+	created: <%= seq.created_at %><br/>
+
+	<%= link_to "Add Poses", new_sequence_pose_path(seq) %><br/><br/><br/>
+	<hr>
+	
+<% end %>

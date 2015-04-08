@@ -1,4 +1,4 @@
 class Pose < ActiveRecord::Base
-  belongs_to :sequence
-  has_many :photos
+  has_and_belongs_to_many :sequences
+  belongs_to :user
 end

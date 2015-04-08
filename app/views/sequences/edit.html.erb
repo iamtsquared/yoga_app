@@ -1,0 +1,9 @@
+<div class="row">
+	<div class="col-md-3">
+	add to  <strong><%= "#{@sequence.name}".upcase %></strong> sequence
+	<%= simple_form_for @sequence,  html: { class: 'form-horizonal' } do |form| %>
+	<%= form.input :pose_id %>
+		<%= form.submit "Confirm"%></br></br>
+	<% end %>\
+	</div>
+</div>

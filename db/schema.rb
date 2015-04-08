@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150406194943) do
+ActiveRecord::Schema.define(version: 20150408191932) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "body"
@@ -40,9 +40,18 @@ ActiveRecord::Schema.define(version: 20150406194943) do
     t.integer  "sequence_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "image"
+    t.integer  "user_id"
   end
 
   add_index "poses", ["sequence_id"], name: "index_poses_on_sequence_id"
+
+  create_table "poses_sequences", force: :cascade do |t|
+    t.integer  "pose_id"
+    t.integer  "sequence_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "sequences", force: :cascade do |t|
     t.string   "name"
@@ -50,6 +59,7 @@ ActiveRecord::Schema.define(version: 20150406194943) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "pose_id"
   end
 
   add_index "sequences", ["user_id"], name: "index_sequences_on_user_id"

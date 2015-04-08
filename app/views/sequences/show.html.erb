@@ -1,0 +1,19 @@
+<h2>Start building by adding poses to this sequence</h2>
+
+sequence: <%=  @sequence.name %><br/>
+level: <%=  @sequence.level %><br/>
+created: <%=  @sequence.created_at %><br/>
+last update: <%=  @sequence.updated_at %><br/><br/>
+<div>POSES</div>
+	<% @poses.each do |pose| %>
+		<li><%= pose.name %></li></br>
+	<% end %>
+
+
+<%= link_to "Add Poses", new_sequence_pose_path(@sequence) %><br/><br/><br/>
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+<h2>NEW SEQUENCE</h1>
+<div class='row'>
+	<div class='col-md-2'>
+		<%= simple_form_for @sequence do |form| %>
+			<%= form.input :name %>
+			<%= form.input :level %>
+			<%= form.submit 'Create Sequence' %> 
+	</div>
+</div>
+<% end %>

@@ -1,5 +1,6 @@
 class Sequence < ActiveRecord::Base
   belongs_to :user
-  has_many :comments
-  has_many :poses
+  has_and_belongs_to_many :poses
+
+  validates :name, presence: true
 end

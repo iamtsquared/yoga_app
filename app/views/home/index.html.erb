@@ -2,7 +2,24 @@
 
 <p>
 Here you will learn how to create yoga sequences and string poses along to create a well rounded practice.  Feel free to also share you sequences and browse other user's sequences.
-<%= image_tag '/yogaDog.jpg' %> 
 </p><br/>
 
-<%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+<div class="row">
+	<div class="col-md-3">
+		<%= button_to "Build a New Sequence", new_sequence_path, :method => "get" %><br/>
+	</div>
+	<div class="col-md-3">	
+		<%= button_to "My Sequences", sequences_path, :method => "get" %><br/>
+	</div>
+	<div class="col-md-3">
+		<%= button_to "Browse Poses", poses_path, :method => "get" %>
+	</div>
+	<div class="col-md-3">
+		<%= button_to "Browse Sequences", sequences_path, :method => "get" %>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-6">
+		<%= image_tag asset_path 'yogaDog.jpg' %> <br/>
+	</div>	
+</div>
